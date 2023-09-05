@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro"
+
+import websites from "../data/websites.json"
+---
+
+<Layout title="Article summarizer">
+  <div class="container">
+    <h1>Article scraper and summarizer</h1>
+    <div class="websites">
+      {
+        websites.map((website) => {
+          return (
+            <a href={"/articles/" + website.short_name}>
+              <img src={website.image_url} alt="website" />
+            </a>
+          )
+        })
+      }
+    </div>
+  </div>
+</Layout>
+
+<style lang="scss">
+  .container {
+    h1 {
+      font-size: 2.5rem;
+      color: var(--almost-black);
+      text-align: center;
+      margin: 3rem;
+      font-weight: bold;
+    }
+
+    .websites {
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+
+      a {
+        display: flex;
+        justify-content: center;
+      }
+
+      img {
+        width: 300px;
+        border-radius: 5px;
+        &:hover {
+          box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+  }
+</style>

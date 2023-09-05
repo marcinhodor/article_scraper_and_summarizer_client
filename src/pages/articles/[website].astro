@@ -1,0 +1,21 @@
+---
+import Articles from "../../components/Articles.svelte"
+import Layout from "../../layouts/Layout.astro"
+import websites from "../../data/websites.json"
+
+export function getStaticPaths() {
+  const website_paths = []
+  for (let website of websites) {
+    website_paths.push({ params: { website: website.short_name } })
+  }
+  return website_paths
+}
+
+const { website } = Astro.params
+
+const endpoint = `/${website}`
+---
+
+<Layout title="Article sumamrizer">
+  <Articles client:only endpoint={endpoint} />
+</Layout>

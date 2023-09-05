@@ -1,0 +1,17 @@
+[
+  {
+    "title": "The Guardian",
+    "short_name": "the_guardian",
+    "image_url": "../images/the_guardian.png"
+  },
+  {
+    "title": "CNN",
+    "short_name": "cnn",
+    "image_url": "../images/cnn.png"
+  },
+  {
+    "title": "BBC",
+    "short_name": "bbc",
+    "image_url": "../images/bbc.png"
+  }
+]

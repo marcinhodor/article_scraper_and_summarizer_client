@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte"
   import { fade } from "svelte/transition"
-  import websites from "../data/websites.json"
+  import websites from "../content/websites/websites.json"
 
   // import data_file from "../data/dev_data.json"
   import ArticleCard from "./ArticleCard.svelte"

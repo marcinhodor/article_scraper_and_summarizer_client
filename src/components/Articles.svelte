@@ -12,14 +12,11 @@
   let articles = []
   let loading = false
 
-  const imgAndTitle = (endpoint) => {
+  const imgFile = (endpoint) => {
     const index = websites.findIndex(
       (website) => "/" + website.short_name === endpoint
     )
-    // console.log(websites[0].short_name)
-    const websiteInfo = websites[index]
-    // console.log(websiteInfo)
-    return websiteInfo
+    return websites[index]
   }
 
   onMount(async function () {
@@ -35,7 +32,7 @@
 
 <div class="articles">
   <div class="website-img">
-    <img src={imgAndTitle(endpoint).image_url} alt="news website" />
+    <img src={"/src/img/" + imgFile(endpoint).img} alt="news website" />
   </div>
   {#if loading}
     <div class="spinner" in:fade>

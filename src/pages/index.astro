@@ -12,7 +12,7 @@ import websites from "../../public/data/websites/websites.json"
         websites.map((website) => {
           return (
             <a href={"/articles/" + website.short_name}>
-              <img src={website.image_url} alt="website" />
+              <img src={"/src/img/" + website.img} alt="website" />
             </a>
           )
         })

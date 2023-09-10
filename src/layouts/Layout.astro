@@ -23,7 +23,17 @@ const { title } = Astro.props
       </header>
       <slot />
       <footer>
-        <p>Created by Marcin Hodor</p>
+        <span> Created by Marcin Hodor - mhodor@o2.pl</span>
+        <span>
+          GitHub repository:
+          <a
+            href="https://github.com/marcinhodor/article_scraper_and_summarizer_client"
+            target="_blank"
+            rel="noreferrer"
+          >
+            link
+          </a>
+        </span>
       </footer>
     </div>
   </body>
@@ -92,9 +102,14 @@ const { title } = Astro.props
     }
 
     footer {
+      display: flex;
+      flex-direction: column;
       width: 100%;
-      border: 1px solid orange;
       margin-top: auto;
+      border-top: 1px solid rgb(190, 190, 190);
+      padding: 10px;
+      line-height: 1.5em;
+      font-size: 0.9em;
     }
   }
 </style>

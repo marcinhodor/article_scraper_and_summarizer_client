@@ -16,6 +16,6 @@ const { website } = Astro.params
 const endpoint = `/${website}`
 ---
 
-<Layout title="Article sumamrizer">
+<Layout title="Article scraper and summarizer">
   <Articles client:only endpoint={endpoint} />
 </Layout>

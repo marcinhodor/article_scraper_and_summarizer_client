@@ -32,7 +32,7 @@
 
 <div class="articles">
   <div class="website-img">
-    <img src={"/src/img/" + imgFile(endpoint).img} alt="news website" />
+    <img src={"/public/img/" + imgFile(endpoint).img} alt="news website" />
   </div>
   {#if loading}
     <div class="spinner" in:fade>

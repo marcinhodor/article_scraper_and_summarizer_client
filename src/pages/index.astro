@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro"
-
 import websites from "../../public/data/websites/websites.json"
 ---
 
@@ -12,7 +11,7 @@ import websites from "../../public/data/websites/websites.json"
         websites.map((website) => {
           return (
             <a href={"/articles/" + website.short_name}>
-              <img src={"/public/img/" + website.img} alt="website" />
+              <img src={"/img/" + website.img} alt="website" />
             </a>
           )
         })

@@ -62,14 +62,14 @@
   </div>
   <div class="right">
     <button class="button-top" on:click={downloadSummary(article.text)}
-      >Summarize</button
+      >Summary</button
     >
     <a
       href={article.link}
       target="_blank"
       rel="noopener noreferrer"
       on:click|stopPropagation={""}
-      ><button class="button-bottom">Read full</button></a
+      ><button class="button-bottom">Full article</button></a
     >
   </div>
 </div>
@@ -116,7 +116,7 @@
     .authors {
       margin: 5px 0;
       color: #666666;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
     .spinner {
       display: flex;
@@ -124,7 +124,7 @@
     }
 
     .summary {
-      // font-style: italic;
+      font-style: italic;
       color: var(--almost-black);
     }
   }
@@ -175,18 +175,31 @@
       grid-template-rows: auto auto;
 
       .left {
+        display: flex;
         order: 1;
-        margin-bottom: 8px;
+        margin: 0;
+        justify-content: left;
       }
 
       .middle {
         order: 3;
         grid-column: span 2;
+        margin-top: 0.8rem;
+
+        .title {
+          font-size: 1.1rem;
+        }
+
+        .summary {
+          font-size: 0.9rem;
+        }
       }
 
       .right {
+        display: flex;
         order: 2;
-        align-items: center;
+        align-items: end;
+        margin: 0;
       }
     }
   }

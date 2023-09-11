@@ -23,10 +23,10 @@ import websites from "../../public/data/websites/websites.json"
 <style lang="scss">
   .container {
     h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: var(--almost-black);
       text-align: center;
-      margin: 3rem;
+      margin: 2.5rem;
       font-weight: bold;
     }
 
@@ -46,8 +46,19 @@ import websites from "../../public/data/websites/websites.json"
         width: 300px;
         border-radius: 5px;
         &:hover {
-          box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.5);
         }
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+        margin: 1.5rem;
+      }
+
+      .websites {
+        gap: 1rem;
       }
     }
   }

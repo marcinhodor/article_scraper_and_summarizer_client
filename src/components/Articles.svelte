@@ -3,7 +3,7 @@
   import { fade } from "svelte/transition"
   import websites from "../../public/data/websites/websites.json"
 
-  // import data_file from "../data/dev_data.json"
+  // import data_file from "../../public/data/dev_data/dev_data.json"
   import ArticleCard from "./ArticleCard.svelte"
   import { Circle } from "svelte-loading-spinners"
 
@@ -72,6 +72,7 @@
 
       p {
         margin-top: 2rem;
+        text-align: center;
         color: var(--almost-black);
       }
     }

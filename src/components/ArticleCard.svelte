@@ -4,6 +4,7 @@
   export let article
 
   let summary = ""
+  let error = null
   let loading = false
 
   const authors_formatted = (authors) => {
@@ -36,6 +37,11 @@
       }),
     })
     const data = await response.json()
+    if (response.status !== 200) {
+      error = data.detail
+      loading = false
+      return
+    }
     summary = formatDotSpace(data.data[0].summary_text)
     loading = false
   }
@@ -52,11 +58,11 @@
     <p class="authors">{authors_formatted(article.authors)}</p>
     {#if loading}
       <div class="spinner" in:fade>
-        <Circle size="40" color="var(--almost-black)" unit="px" duration="1s" />
+        <Circle size="40" color="var(--dark-blue)" unit="px" duration="1s" />
       </div>
     {:else}
-      <p class="summary">
-        {summary}
+      <p class={`summary ${error ? "error" : ""}`}>
+        {error || summary}
       </p>
     {/if}
   </div>
@@ -127,6 +133,10 @@
       font-style: italic;
       color: var(--almost-black);
     }
+
+    .error {
+      color: red;
+    }
   }
 
   .right {
@@ -149,6 +159,10 @@
 
     .button-bottom {
       background-color: var(--dark-blue);
+
+      &:hover {
+        background-color: var(--dark-blue-hover);
+      }
     }
 
     button {
@@ -163,7 +177,6 @@
       z-index: 1;
 
       &:hover {
-        background-color: var(--dark-blue-hover);
         cursor: pointer;
       }
     }

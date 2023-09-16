@@ -36,7 +36,7 @@
       }),
     })
     const data = await response.json()
-    summary = formatDotSpace(data[0].summary_text)
+    summary = formatDotSpace(data.data[0].summary_text)
     loading = false
   }
 </script>

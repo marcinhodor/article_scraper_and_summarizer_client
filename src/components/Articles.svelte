@@ -11,6 +11,7 @@
 
   let articles = []
   let loading = false
+  let error = null
 
   const imgFile = (endpoint) => {
     const index = websites.findIndex(
@@ -24,6 +25,11 @@
     const url = `https://articlesummarize-1-z7868205.deta.app/articles${endpoint}`
     const response = await fetch(url)
     const data = await response.json()
+    if (response.status !== 200) {
+      error = data.detail
+      loading = false
+      return
+    }
     articles = data
     // articles = data_file
     loading = false
